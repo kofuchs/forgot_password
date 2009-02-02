@@ -40,7 +40,6 @@ class ForgotPasswordGenerator < Rails::Generator::NamedBase
       m.class_collisions controller_class_path,       "#{controller_class_name}Controller", # Sessions Controller
                                                       "#{controller_class_name}Helper"
       m.class_collisions class_path,                  "#{class_name}", "#{class_name}Mailer", "#{class_name}MailerTest", "#{class_name}Observer"
-      m.class_collisions [], 'AuthenticatedSystem', 'AuthenticatedTestHelper'
 
       # Controller, helper, views, and test directories.
       m.directory File.join('app/models', class_path)
