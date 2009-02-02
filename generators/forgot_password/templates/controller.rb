@@ -47,7 +47,6 @@ class <%= controller_class_name %>Controller < ApplicationController
     respond_to do |format|
       if @<%= user_model_name %>.update_attributes(params[:<%= user_model_name %>])
        @<%= file_name %>.destroy
-        PasswordMailer.deliver_reset_password(@user)
         <%= class_name %>Mailer.deliver_reset_password(@<%= user_model_name %>)
         flash[:notice] = "Password was successfully updated. Please log in."
         format.html { redirect_to login_path}
