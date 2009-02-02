@@ -23,7 +23,7 @@ class <%= controller_class_name %>Controller < ApplicationController
         # use a friendlier message than standard error on missing email address
         if @<%= file_name %>.errors.on(:<%= user_model_name %>)
           @<%= file_name %>.errors.clear
-          flash[:error] = "We can't find a #{user_model_name} with that email. Please check the email address and try again..."
+          flash[:error] = "We can't find a <%= user_model_name %> with that email. Please check the email address and try again..."
         end
         format.html { render :action => "new" }
         format.xml  { render :xml => @<%= file_name %>.errors, :status => :unprocessable_entity }
